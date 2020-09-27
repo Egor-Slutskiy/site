@@ -19,5 +19,6 @@ class Config(object):
     MAIL_PASSWORD = 'energy3487715174s'
     ADMINS = ['es79645736668@gmail.com']
     LANGUAGES = ['en', 'ru']
+    LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT')
 
     POSTS_PER_PAGE = 20
