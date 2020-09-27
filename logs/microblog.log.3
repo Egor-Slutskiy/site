@@ -1,0 +1,36 @@
+2020-09-27 18:36:05,948 ERROR: Exception on /search [GET] [in c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\Floppy\Desktop\university\site\app\main\routes.py", line 137, in search
+    posts, total = Post.search(g.search_form.q.data, page,
+  File "C:\Users\Floppy\Desktop\university\site\app\models.py", line 15, in search
+    ids, total = query_index(cls.__tablename__, expression, page, per_page)
+  File "C:\Users\Floppy\Desktop\university\site\app\search.py", line 23, in query_index
+    search = current_app.elasticsearch.search(
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\elasticsearch\client\utils.py", line 152, in _wrapped
+    return func(*args, params=params, headers=headers, **kwargs)
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\elasticsearch\client\__init__.py", line 1612, in search
+    return self.transport.perform_request(
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\elasticsearch\transport.py", line 392, in perform_request
+    raise e
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\elasticsearch\transport.py", line 358, in perform_request
+    status, headers_response, data = connection.perform_request(
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 269, in perform_request
+    self._raise_error(response.status, raw_data)
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\elasticsearch\connection\base.py", line 300, in _raise_error
+    raise HTTP_EXCEPTIONS.get(status_code, TransportError)(
+elasticsearch.exceptions.NotFoundError: NotFoundError(404, '<!DOCTYPE html>\n<html>\n  <head>\n    <title>\n    Welcome to Cucumber\n</title>\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <!-- Bootstrap -->\n    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">\n  </head>\n  <body>\n    \n    <nav class="navbar navbar-default">\n        <div class="container">\n            <div class="navbar-header">\n                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">\n                    <span class="sr-only">Toggle navigation</span>\n                    <span class="icon-bar"></span>\n                    <span class="icon-bar"></span>\n                    <span class="icon-bar"></span>\n                </button>\n                <a class="navbar-brand" href="/index">Microblog</a>\n            </div>\n            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">\n                <ul class="nav navbar-nav">\n                    <li><a href="/index">Home</a></li>\n                    <li><a href="/explore">Explore</a></li>\n                </ul>\n                \n                <ul class="nav navbar-nav navbar-right">\n                    \n                    <li><a href="/auth/login">Login</a></li>\n                    \n                </ul>\n            </div>\n        </div>\n    </nav>\n\n    \n    <div class="container">\n        \n        \n        \n\n        \n        \n    <h1>Not Found</h1>\n    <p><a href="/index">Back</a></p>\n\n    </div>\n\n\n    \n    \n    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>\n    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>\n    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment-with-locales.min.js" integrity="sha384-WxkyfzCCre+H1hXpoMH2JOqSotIuNoiH5KQ4zCQxIxOSHo49PeKFlgftAkREuLTR" crossorigin="anonymous"></script>\n<script>\nmoment.locale("en");\nfunction flask_moment_render(elem) {\n    timestamp = moment($(elem).data(\'timestamp\'));\n    func = $(elem).data(\'function\');\n    format = $(elem).data(\'format\');\n    timestamp2 = $(elem).data(\'timestamp2\');\n    no_suffix = $(elem).data(\'nosuffix\');\n    args = [];\n    if (format)\n        args.push(format);\n    if (timestamp2)\n        args.push(moment(timestamp2));\n    if (no_suffix)\n        args.push(no_suffix);\n    $(elem).text(timestamp[func].apply(timestamp, args));\n    $(elem).removeClass(\'flask-moment\').show();\n}\nfunction flask_moment_render_all() {\n    $(\'.flask-moment\').each(function() {\n        flask_moment_render(this);\n        if ($(this).data(\'refresh\')) {\n            (function(elem, interval) { setInterval(function() { flask_moment_render(elem) }, interval); })(this, $(this).data(\'refresh\'));\n        }\n    })\n}\n$(document).ready(function() {\n    flask_moment_render_all();\n});\n</script>\n    <script>\nmoment.locale("en");\n</script>\n    <script>\n        function translate(sourceElem, destElem, sourceLang, destLang) {\n            $(destElem).html(\'<img src="/static/loading.gif">\');\n            $.post(\'/translate\', {\n                text: $(sourceElem).text(),\n                source_language: sourceLang,\n                dest_language: destLang\n            }).done(function(response) {\n                $(destElem).text(response[\'text\'])\n            }).fail(function() {\n                $(destElem).text("Error: Could not contact server.");\n            });\n        }\n    </script>\n\n  </body>\n</html>\n')
+2020-09-27 18:39:34,142 INFO: Microblog startup [in C:\Users\Floppy\Desktop\university\site\app\__init__.py:75]

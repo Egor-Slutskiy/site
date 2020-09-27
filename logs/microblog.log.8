@@ -1,0 +1,110 @@
+2020-09-27 16:29:59,588 ERROR: Exception on /user/Sonya [GET] [in c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\Floppy\Desktop\university\site\app\routes.py", line 108, in user
+    return render_template('user.html', user=user, posts=posts.items,
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Floppy\Desktop\university\site\app\templates\user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\Floppy\Desktop\university\site\app\templates\base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
+    {%- block html %}
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
+    {% block body -%}
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
+    {% block content -%}
+  File "C:\Users\Floppy\Desktop\university\site\app\templates\base.html", line 48, in block "content"
+    {% block app_content %}{% endblock %}
+  File "C:\Users\Floppy\Desktop\university\site\app\templates\user.html", line 26, in block "app_content"
+    {{ form.hidden_tag() }}
+jinja2.exceptions.UndefinedError: 'app.forms.EmptyForm object' has no attribute 'unfollow'
+2020-09-27 16:30:05,222 INFO: Microblog startup [in C:\Users\Floppy\Desktop\university\site\app\__init__.py:57]
+2020-09-27 16:31:00,702 ERROR: Exception on /unfollow/Sonya [GET] [in c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\Floppy\Desktop\university\site\app\routes.py", line 157, in unfollow
+    flash(_('You are not following %(username)s.', username=username))
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\flask_babel\__init__.py", line 689, in gettext
+    return get_domain().gettext(*args, **kwargs)
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\flask_babel\__init__.py", line 588, in gettext
+    return s if not variables else s % variables
+ValueError: incomplete format
+2020-09-27 16:32:34,349 INFO: Microblog startup [in C:\Users\Floppy\Desktop\university\site\app\__init__.py:57]
+2020-09-27 16:33:11,796 INFO: Microblog startup [in C:\Users\Floppy\Desktop\university\site\app\__init__.py:57]
+2020-09-27 16:34:12,850 INFO: Microblog startup [in C:\Users\Floppy\Desktop\university\site\app\__init__.py:57]
+2020-09-27 16:37:49,276 INFO: Microblog startup [in C:\Users\Floppy\Desktop\university\site\app\__init__.py:57]
+2020-09-27 16:41:05,153 INFO: Microblog startup [in C:\Users\Floppy\Desktop\university\site\app\__init__.py:57]
+2020-09-27 16:43:49,888 INFO: Microblog startup [in C:\Users\Floppy\Desktop\university\site\app\__init__.py:57]
+2020-09-27 16:46:56,885 INFO: Microblog startup [in C:\Users\Floppy\Desktop\university\site\app\__init__.py:57]
+2020-09-27 16:50:24,803 INFO: Microblog startup [in C:\Users\Floppy\Desktop\university\site\app\__init__.py:57]
+2020-09-27 16:50:35,398 INFO: Microblog startup [in C:\Users\Floppy\Desktop\university\site\app\__init__.py:57]
+2020-09-27 16:51:59,285 INFO: Microblog startup [in C:\Users\Floppy\Desktop\university\site\app\__init__.py:57]
+2020-09-27 16:54:35,371 INFO: Microblog startup [in C:\Users\Floppy\Desktop\university\site\app\__init__.py:55]
+2020-09-27 17:00:49,050 INFO: Microblog startup [in C:\Users\Floppy\Desktop\university\site\app\__init__.py:55]
+2020-09-27 17:01:17,316 INFO: Microblog startup [in C:\Users\Floppy\Desktop\university\site\app\__init__.py:55]
+2020-09-27 17:11:45,682 INFO: Microblog startup [in C:\Users\Floppy\Desktop\university\site\app\__init__.py:55]
+2020-09-27 17:11:52,881 INFO: Microblog startup [in C:\Users\Floppy\Desktop\university\site\app\__init__.py:55]
+2020-09-27 17:12:56,284 INFO: Microblog startup [in C:\Users\Floppy\Desktop\university\site\app\__init__.py:55]
+2020-09-27 17:13:12,399 ERROR: Exception on /follow/Sonya [GET] [in c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\Floppy\Desktop\university\site\app\routes.py", line 142, in follow
+    flash(_('You are following %(username)s!', username=username))
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\flask_babel\__init__.py", line 689, in gettext
+    return get_domain().gettext(*args, **kwargs)
+  File "c:\users\floppy\appdata\local\programs\python\python38-32\lib\site-packages\flask_babel\__init__.py", line 588, in gettext
+    return s if not variables else s % variables
+ValueError: incomplete format
+2020-09-27 17:14:21,697 INFO: Microblog startup [in C:\Users\Floppy\Desktop\university\site\app\__init__.py:55]
+2020-09-27 17:45:51,446 INFO: Microblog startup [in C:\Users\Floppy\Desktop\university\site\app\__init__.py:74]
