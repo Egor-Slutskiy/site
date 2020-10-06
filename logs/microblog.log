@@ -105,3 +105,7 @@ Traceback (most recent call last):
     raise BuildError(endpoint, values, method, self)
 werkzeug.routing.BuildError: Could not build url for endpoint 'main.search'. Did you mean 'main.user' instead?
 2020-09-27 18:44:03,028 INFO: Microblog startup [in C:\Users\Floppy\Desktop\university\site\app\__init__.py:75]
+2020-10-06 19:34:31,180 INFO: Microblog startup [in C:\Users\Floppy\Desktop\university\site\app\__init__.py:80]
+2020-10-06 19:35:15,463 INFO: Microblog startup [in C:\Users\Floppy\Desktop\university\site\app\__init__.py:80]
+2020-10-06 19:35:31,555 INFO: Microblog startup [in C:\Users\Floppy\Desktop\university\site\app\__init__.py:80]
+2020-10-06 19:35:50,086 INFO: Microblog startup [in C:\Users\Floppy\Desktop\university\site\app\__init__.py:80]
